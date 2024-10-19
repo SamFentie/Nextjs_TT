@@ -5,11 +5,11 @@ interface User{
   id:number;
   name:string;
 }
-export const users = async () => {
+export const users =  async() => {
   const res=await fetch('https://jsonplaceholder.typicode.com/users',
     {next:{revalidate:10}
   })
-  const users: User[]=await res.json()
+  const users: User[]=(await res.json()) as User[];
   return (
     <div>
       <h1>Users</h1>
@@ -19,4 +19,3 @@ export const users = async () => {
 }
 
 export default users
-
