@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 
-const newusers = () => {
+
+const Newusers = () => {
+  const [time,setTime]=useState(new Date().toLocaleTimeString())
+  useEffect(()=>{
+    setTime(new Date().toLocaleTimeString())
+  },[])
   return (
+    <>
+    Hello at <p>{time}</p>
     <div>newusers</div>
+    </>
   )
 }
 
-export default newusers
+export default Newusers
